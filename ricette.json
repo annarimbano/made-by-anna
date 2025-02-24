@@ -1,0 +1,24 @@
+{
+    "tiramisu": {
+        "porzioni": 6,
+        "diametro_teglia": 24,
+        "ingredienti": [
+            { "ingrediente": "Mascarpone", "quantità": 500, "unità": "g" },
+            { "ingrediente": "Zucchero", "quantità": 100, "unità": "g" },
+            { "ingrediente": "Uova", "quantità": 4, "unità": "uova" },
+            { "ingrediente": "Caffè", "quantità": 200, "unità": "ml" },
+            { "ingrediente": "Savoiardi", "quantità": 300, "unità": "g" }
+        ]
+    },
+    "pancake": {
+        "porzioni": 4,
+        "numero_pezzi": 10,
+        "ingredienti": [
+            { "ingrediente": "Farina", "quantità": 200, "unità": "g" },
+            { "ingrediente": "Uova", "quantità": 2, "unità": "uova" },
+            { "ingrediente": "Latte", "quantità": 250, "unità": "ml" },
+            { "ingrediente": "Zucchero", "quantità": 50, "unità": "g" },
+            { "ingrediente": "Burro", "quantità": 30, "unità": "g" }
+        ]
+    }
+}
