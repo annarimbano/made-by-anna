@@ -1,24 +1,62 @@
 {
-    "tiramisu": {
-        "porzioni": 6,
-        "diametro_teglia": 24,
-        "ingredienti": [
-            { "ingrediente": "Mascarpone", "quantità": 500, "unità": "g" },
-            { "ingrediente": "Zucchero", "quantità": 100, "unità": "g" },
-            { "ingrediente": "Uova", "quantità": 4, "unità": "uova" },
-            { "ingrediente": "Caffè", "quantità": 200, "unità": "ml" },
-            { "ingrediente": "Savoiardi", "quantità": 300, "unità": "g" }
-        ]
+  "Tiramisù": {
+    "porzioni": 4,
+    "teglia": {
+      "forma": "rettangolare",
+      "larghezza": 20,
+      "lunghezza": 30
     },
-    "pancake": {
-        "porzioni": 4,
-        "numero_pezzi": 10,
-        "ingredienti": [
-            { "ingrediente": "Farina", "quantità": 200, "unità": "g" },
-            { "ingrediente": "Uova", "quantità": 2, "unità": "uova" },
-            { "ingrediente": "Latte", "quantità": 250, "unità": "ml" },
-            { "ingrediente": "Zucchero", "quantità": 50, "unità": "g" },
-            { "ingrediente": "Burro", "quantità": 30, "unità": "g" }
-        ]
+    "ingredienti": {
+      "uova": { "quantità": 4, "unità": "uova" },
+      "zucchero": { "quantità": 100, "unità": "g" },
+      "mascarpone": { "quantità": 250, "unità": "g" },
+      "savoiardi": { "quantità": 200, "unità": "g" },
+      "caffè": { "quantità": 150, "unità": "ml" }
     }
+  },
+  "Frittelle": {
+    "porzioni": 10,
+    "teglia": {
+      "forma": "nessuna"
+    },
+    "ingredienti": {
+      "farina": { "quantità": 200, "unità": "g" },
+      "uova": { "quantità": 2, "unità": "uova" },
+      "zucchero": { "quantità": 50, "unità": "g" },
+      "latte": { "quantità": 150, "unità": "ml" }
+    }
+  },
+  "Pizza Margherita": {
+    "porzioni": 2,
+    "teglia": {
+      "forma": "tonda",
+      "diametro": 30
+    },
+    "ingredienti": {
+      "farina": { "quantità": 500, "unità": "g" },
+      "acqua": { "quantità": 300, "unità": "ml" },
+      "lievito": { "quantità": 5, "unità": "g" },
+      "sale": { "quantità": 10, "unità": "g" },
+      "olio": { "quantità": 20, "unità": "ml" },
+      "passata di pomodoro": { "quantità": 200, "unità": "g" },
+      "mozzarella": { "quantità": 250, "unità": "g" }
+    }
+  },
+  "Torta di Mele": {
+    "porzioni": 8,
+    "teglia": {
+      "forma": "rettangolare",
+      "larghezza": 25,
+      "lunghezza": 35
+    },
+    "ingredienti": {
+      "farina": { "quantità": 250, "unità": "g" },
+      "zucchero": { "quantità": 150, "unità": "g" },
+      "burro": { "quantità": 100, "unità": "g" },
+      "uova": { "quantità": 3, "unità": "uova" },
+      "mele": { "quantità": 4, "unità": "mele" },
+      "latte": { "quantità": 100, "unità": "ml" }
+    }
+  }
 }
+
