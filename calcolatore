@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore per ricette</title>
+</head>
+<body>
+    <h1>Calcolatore per ricette</h1>
+    
+    <label for="ricetta">Scegli una ricetta:</label>
+    <select id="ricetta">
+        <option value="tiramisu">Tiramisù</option>
+        <!-- Puoi aggiungere altre ricette qui -->
+    </select>
+    
+    <br><br>
+    
+    <label for="porzioni">Numero di porzioni:</label>
+    <input type="number" id="porzioni" value="4" min="1">
+    
+    <button onclick="calcolaRicetta()">Calcola le nuove quantità</button>
+    
+    <h2>Ingredienti per il Tiramisù:</h2>
+    <ul id="ingredienti"></ul>
+    
+    <script>
+        const ricette = {
+            tiramisu: {
+                porzioni: 4,
+                ingredienti: {
+                    mascarpone: 500,  // grammi
+                    uova: 4,          // numero
+                    zucchero: 100,     // grammi
+                    savoiardi: 200,    // grammi
+                    caffè: 200         // ml
+                }
+            }
+        };
+        
+        function calcolaRicetta() {
+            const ricettaSelezionata = document.getElementById("ricetta").value;
+            const numPorzioni = document.getElementById("porzioni").value;
+            const ricetta = ricette[ricettaSelezionata];
+            
+            const fattoreMoltiplicazione = numPorzioni / ricetta.porzioni;
+            const ingredientiModificati = Object.keys(ricetta.ingredienti).map(ingrediente => {
+                return `${ingrediente}: ${Math.round(ricetta.ingredienti[ingrediente] * fattoreMoltiplicazione)} ${getUnita(ingrediente)}`;
+            });
+            
+            document.getElementById("ingredienti").innerHTML = ingredientiModificati.join('<br>');
+        }
+        
+        function getUnita(ingrediente) {
+            // Funzione per restituire l'unità di misura giusta
+            if (ingrediente === 'savoiardi') return 'grammi';
+            if (ingrediente === 'caffè') return 'ml';
+            if (ingrediente === 'uova') return 'numero';
+            return 'grammi';
+        }
+    </script>
+</body>
+</html>
