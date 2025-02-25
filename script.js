@@ -71,44 +71,29 @@ document.addEventListener("DOMContentLoaded", function () {
         dettagliRicetta.innerHTML = html;
     }
 
-    window.calcolaIngredienti = function () {
-        const ricettaSelezionata = document.getElementById("selezionaRicetta").value;
-        if (!ricettaSelezionata) return;
+window.calcolaIngredienti = function () {
+    const ricettaSelezionata = document.getElementById("selezionaRicetta").value;
+    if (!ricettaSelezionata) return;
 
-        const criterio = document.getElementById("criterio").value;
-        const valore = parseFloat(document.getElementById("valore").value);
-        const datiRicetta = ricette[ricettaSelezionata];
+    const criterio = document.getElementById("criterio").value;
+    const valore = parseFloat(document.getElementById("valore").value);
+    const datiRicetta = ricette[ricettaSelezionata];
 
-        let fattoreScala = 1;
+    let fattoreScala = 1;
 
-        if (criterio === "porzioni") {
-            fattoreScala = valore / datiRicetta.porzioni;
-        } else if (criterio === "teglia" && datiRicetta.teglia.forma !== "nessuna") {
-            if (datiRicetta.teglia.forma === "rettangolare") {
-                let areaBase = datiRicetta.teglia.larghezza * datiRicetta.teglia.lunghezza;
-                fattoreScala = valore / areaBase;
-            } else if (datiRicetta.teglia.forma === "tonda") {
-                let areaBase = Math.PI * Math.pow(datiRicetta.teglia.diametro / 2, 2);
-                fattoreScala = valore / areaBase;
-            }
-        } else if (criterio === "ingrediente") {
-            let ingredienteSelezionato = document.getElementById("ingredienteLimitante").value;
-            if (datiRicetta.ingredienti[ingredienteSelezionato]) {
-                let quantitàBase = datiRicetta.ingredienti[ingredienteSelezionato].quantità;
-                fattoreScala = valore / quantitàBase;
-            }
+    if (criterio === "porzioni") {
+        fattoreScala = valore / datiRicetta.porzioni;
+    } else if (criterio === "teglia" && datiRicetta.teglia.forma !== "nessuna") {
+        if (datiRicetta.teglia.forma === "rettangolare") {
+            let areaBase = datiRicetta.teglia.larghezza * datiRicetta.teglia.lunghezza;
+            fattoreScala = valore / areaBase;
+        } else if (datiRicetta.teglia.forma === "tonda") {
+            let areaBase = Math.PI * Math.pow(datiRicetta.teglia.diametro / 2, 2);
+            fattoreScala = valore / areaBase;
         }
+    } else if (criterio === "ingrediente") {
+    
 
-        const dettagliRicetta = document.getElementById("dettagliRicetta");
-        let html = `<h3>Ingredienti ricalcolati</h3><ul>`;
-        Object.keys(datiRicetta.ingredienti).forEach(ingrediente => {
-            let datiIngrediente = datiRicetta.ingredienti[ingrediente];
-            let nuovaQuantità = (datiIngrediente.quantità * fattoreScala).toFixed(2);
-            html += `<li>${ingrediente}: ${nuovaQuantità} ${datiIngrediente.unità}</li>`;
-        });
-        html += `</ul>`;
-
-        dettagliRicetta.innerHTML += html;
     };
 
     document.getElementById("criterio").addEventListener("change", function () {
