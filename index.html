@@ -9,9 +9,8 @@
 <body>
     <header>
         <h1>Benvenuto sul mio sito!</h1>
-            <p>Ciao! Qui troverai alcuni dei miei progetti, tra cui un calcolatore per ricette.</p>
+            <p>Ciao! Qui troverai alcuni dei miei progetti.</p>
     
-    <a href="calcolatore.html">Vai al calcolatore per le ricette</a>
         <nav>
             <select id="selezionaRicetta">
     <option value="">Seleziona una ricetta</option>
@@ -27,6 +26,18 @@
                 <li><a href="giochini.html">Giochini</a></li>
             </ul>
         </nav>
+
+        <section id="ricette">
+    <h2>Seleziona una ricetta</h2>
+    <label for="selezionaRicetta">Scegli una ricetta:</label>
+    <select id="selezionaRicetta">
+        <option value="">Seleziona una ricetta</option>
+    </select>
+
+    <div id="dettagliRicetta"></div>
+</section>
+
+<script src="script.js"></script>
     </header>
 
     <main>
